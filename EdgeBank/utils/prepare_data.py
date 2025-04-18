@@ -43,7 +43,7 @@ def main():
     """
     commands to run
     """
-    network_name = 'UNtrade'
+    network_name = 'CanParl'
     common_path = Path(__file__).parents[1]
     print("Info: common_path:", common_path)
     if network_name != 'LegisEdgelist':

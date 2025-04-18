@@ -50,8 +50,7 @@ def edge_bank_unlimited_memory(sources_list, destinations_list):
     for e_idx in range(len(sources_list)):
         if (sources_list[e_idx], destinations_list[e_idx]) not in mem_edges:
             mem_edges[(sources_list[e_idx], destinations_list[e_idx])] = 1
-    # print("Info: EdgeBank memory mode: >> Unlimited Memory <<")
-    # print(f"Info: Memory contains {len(mem_edges)} edges.")
+
     return mem_edges
 
 
@@ -67,20 +66,15 @@ def edge_bank_repetition_based_memory(sources_list, destinations_list):
         else:
             all_seen_edges[(sources_list[e_idx], destinations_list[e_idx])] = 1
     n_repeat = np.array(list(all_seen_edges.values()))
-    # repeat_occur = Counter(n_repeat)  # contains something like this: {"n_repeat_e": number of times happens in
-    # all_seen_edges dictionary}
 
-    # NOTE: different values can be set to the threshold with manipulating the repeat_occur dictionary
+
     threshold = np.mean(n_repeat)
-    # print("Info: repetition of an edge: max:", np.max(n_repeat), "; min:", np.min(n_repeat))
-    # print("Info: Threshold is set equal to the average number of times an edge repeats. Threshold value:", threshold)
+
     mem_edges = {}
     for edge, n_e_repeat in all_seen_edges.items():
         if n_e_repeat >= threshold:
             mem_edges[edge] = 1
 
-    # print("Info: EdgeBank memory mode: >> Repetition-based Memory <<")
-    # print(f"Info: Memory contains {len(mem_edges)} edges.")
 
     return mem_edges
 
@@ -94,6 +88,7 @@ def time_window_edge_memory(sources_list, destinations_list, timestamps_list, st
     dst_in_window = destinations_list[mem_mask]
     mem_edges = edge_bank_unlimited_memory(src_in_window, dst_in_window)
     return mem_edges
+
 
 
 def edge_bank_time_window_memory(sources_list, destinations_list, timestamps_list, window_mode, memory_span=0.15):
@@ -132,6 +127,92 @@ def edge_bank_time_window_memory(sources_list, destinations_list, timestamps_lis
     return mem_edges
 
 
+# New addition: Instead of predicting a link based on if the link exists in memory, 
+# we sample based on the frequency the edge has existed in the past
+def edge_bank_collect_frequencies(sources_list, destinations_list):
+    """
+    collect number of times each edge (u,v) has been seen in the past
+    """
+    freq_dict = {}
+    for e_idx in range(len(sources_list)):
+        edge = (sources_list[e_idx], destinations_list[e_idx])
+        if edge not in freq_dict:
+            freq_dict[edge] = 1
+        else:
+            freq_dict[edge] += 1
+    return freq_dict
+
+def predict_links_frequency(freq_memory, edge_set):
+    """
+    Returns a memory dictionary where the score for each edge is proportional
+    to the log-scaled frequency of its appearance in the training set.
+    """
+    source_nodes, destination_nodes = edge_set
+    preds = []
+    for i in range(len(source_nodes)):
+        edge = (source_nodes[i], destination_nodes[i])
+        # preds.append(freq_memory.get(edge, 0))
+        preds.append(math.log1p(freq_memory.get(edge, 0)))
+        # #or 
+        # max_freq = max(freq_memory.values()) if len(freq_memory) > 0 else 1
+        # score = freq_memory.get(edge, 0) / max_freq
+        # preds.append(score)
+
+
+    return np.array(preds)
+
+
+# Now lets do a window based version of this
+def edge_bank_collect_frequencies_in_window(sources_list, destinations_list, timestamps_list, start_time, end_time):
+    """
+    Collect number of times each edge (u,v) has been seen in the past within a specified time window.
+    """
+    mem_mask = np.logical_and(timestamps_list <= end_time, timestamps_list >= start_time)
+    src_in_window = sources_list[mem_mask]
+    dst_in_window = destinations_list[mem_mask]
+
+    freq_dict = {}
+    for i in range(len(src_in_window)):
+        edge = (src_in_window[i], dst_in_window[i])
+        freq_dict[edge] = freq_dict.get(edge, 0) + 1
+    return freq_dict
+
+
+def edge_bank_window_frequency_memory(sources_list, destinations_list, timestamps_list, window_mode, memory_span=0.15):
+    """
+    Builds a frequency-based memory using only the edges seen in a given time window.
+    The value for each edge is its frequency (or log-scaled frequency) during that window.
+    """
+
+    if window_mode == 'fixed':
+        window_start_ts = np.quantile(timestamps_list, 1 - memory_span)
+        window_end_ts = max(timestamps_list)
+
+    elif window_mode == 'avg_reoccur':
+        e_ts_l = {}
+        for e_idx in range(len(sources_list)):
+            curr_edge = (sources_list[e_idx], destinations_list[e_idx])
+            if curr_edge not in e_ts_l:
+                e_ts_l[curr_edge] = []
+            e_ts_l[curr_edge].append(timestamps_list[e_idx])
+
+        sum_t_interval = 0
+        for ts_list in e_ts_l.values():
+            if len(ts_list) > 1:
+                ts_interval_l = [ts_list[i + 1] - ts_list[i] for i in range(len(ts_list) - 1)]
+                sum_t_interval += np.mean(ts_interval_l)
+        avg_t_interval = sum_t_interval / len(e_ts_l)
+        window_end_ts = max(timestamps_list)
+        window_start_ts = window_end_ts - avg_t_interval
+
+    freq_memory = edge_bank_collect_frequencies_in_window(
+        sources_list, destinations_list, timestamps_list,
+        start_time=window_start_ts, end_time=window_end_ts
+    )
+
+    return freq_memory
+
+
 def edge_bank_link_pred_end_to_end(history_data, positive_edges, negative_edges, memory_opt):
     """
     EdgeBank link prediction
@@ -147,17 +228,29 @@ def edge_bank_link_pred_end_to_end(history_data, positive_edges, negative_edges,
 
     if memory_opt['m_mode'] == 'unlim_mem':
         mem_edges = edge_bank_unlimited_memory(srcs, dsts)
+        predict_fn = predict_links
     elif memory_opt['m_mode'] == 'repeat_freq':
         mem_edges = edge_bank_repetition_based_memory(srcs, dsts)
+        predict_fn = predict_links
     elif memory_opt['m_mode'] == 'time_window':
         mem_edges = edge_bank_time_window_memory(srcs, dsts, ts_list, memory_opt['w_mode'])
+        predict_fn = predict_links
+    # new frequency based memory weight mode
+    elif memory_opt['m_mode'] == 'freq_weight':
+        mem_edges = edge_bank_collect_frequencies(srcs, dsts)
+        predict_fn = predict_links_frequency
+    # new frequency based time window memory weight mode
+    elif memory_opt['m_mode'] == 'window_freq_weight':
+        mem_edges = edge_bank_window_frequency_memory(srcs, dsts, ts_list, memory_opt['w_mode'])
+        predict_fn = predict_links_frequency
+
     else:
         mem_edges = {}
         print("Undefined Memory Option!")
         exit(-1)
 
-    pos_pred = predict_links(mem_edges, positive_edges)
-    neg_pred = predict_links(mem_edges, negative_edges)
+    pos_pred = predict_fn(mem_edges, positive_edges)
+    neg_pred = predict_fn(mem_edges, negative_edges)
 
     return pos_pred, neg_pred
 

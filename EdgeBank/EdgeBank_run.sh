@@ -14,15 +14,15 @@ echo ">>> *** EdgeBank *** <<<"
 echo "**********************************************************************************"
 echo "`date`"
 
-n_runs=5
+n_runs=1
 neg_sample=rnd
 
 
-for data in wikipedia
+for data in CanParl Contacts Flights lastfm Flights mooc SocialEvo uci UNtrade UNvote USLegis wikipedia enron
 do
-  for mem_mode in unlim_mem repeat_freq time_window
+  for mem_mode in  unlim_mem  #window_freq_weight freq_weight repeat_freq time_window 
   do
-    if [ "${mem_mode}" = "time_window" ]
+    if [ "${mem_mode}" = "time_window" ] || [ "${mem_mode}" = "window_freq_weight" ]
     then
       for w_mode in fixed avg_reoccur
       do

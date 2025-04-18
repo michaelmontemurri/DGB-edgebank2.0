@@ -1,0 +1,380 @@
+**********************************************************************************
+>>> *** EdgeBank *** <<<
+**********************************************************************************
+Fri Apr 18 11:57:29 EDT 2025
+================================================
+ARGS:
+Data: wikipedia
+Memory: window_freq_weight
+w_mode: fixed
+n_runs: 5
+================================================
+===========================================================================
+Info: Arguments:
+ Namespace(val_ratio=0.15, test_ratio=0.15, different_new_nodes=False, randomize_features=False, data='wikipedia', n_runs=5, mem_mode='window_freq_weight', w_mode='fixed', neg_sample='rnd')
+===========================================================================
+The dataset has 157474 interactions, involving 9227 different nodes
+The training dataset has 79202 interactions, involving 5904 different nodes
+The validation dataset has 23621 interactions, involving 3256 different nodes
+The test dataset has 23621 interactions, involving 3564 different nodes
+The new node validation dataset has 11742 interactions, involving 2134 different nodes
+The new node test dataset has 11765 interactions, involving 2482 different nodes
+922 nodes were used for the inductive testing, i.e. are never seen during training
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: fixed
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 0
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- ap: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.8392296918767507
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9981251363076873
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.6797619047619049
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.8066205471134675
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.9344734974552701
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.6873224143367527
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.8392927170868346
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9980274228036811
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.6799299719887957
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.8067709096251447
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.8702701080432174
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9964936129564952
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.7431032412965184
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.8497106078763412
+INFO:root:EdgeBank: Run: 0, Elapsed time: 98.34259676933289
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: fixed
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 1
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- ap: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.8392296918767507
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9981251363076873
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.6797619047619049
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.8066205471134675
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.9344734974552701
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.6873224143367527
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.8392927170868346
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9980274228036811
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.6799299719887957
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.8067709096251447
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.8702701080432174
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9964936129564952
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.7431032412965184
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.8497106078763412
+INFO:root:EdgeBank: Run: 1, Elapsed time: 97.63583087921143
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: fixed
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 2
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- ap: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.8392296918767507
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9981251363076873
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.6797619047619049
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.8066205471134675
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.9344734974552701
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.6873224143367527
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.8392927170868346
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9980274228036811
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.6799299719887957
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.8067709096251447
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.8702701080432174
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9964936129564952
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.7431032412965184
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.8497106078763412
+INFO:root:EdgeBank: Run: 2, Elapsed time: 97.62569093704224
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: fixed
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 3
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- ap: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.8392296918767507
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9981251363076873
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.6797619047619049
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.8066205471134675
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.9344734974552701
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.6873224143367527
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.8392927170868346
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9980274228036811
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.6799299719887957
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.8067709096251447
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.8702701080432174
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9964936129564952
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.7431032412965184
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.8497106078763412
+INFO:root:EdgeBank: Run: 3, Elapsed time: 96.39657211303711
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: fixed
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 4
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- ap: 0.8707030547564836
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.8708179021608643
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.8392296918767507
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9981251363076873
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.6797619047619049
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.8066205471134675
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.9344734974552701
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.6873224143367527
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.8392927170868346
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9980274228036811
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.6799299719887957
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.8067709096251447
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.8702701080432174
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9964936129564952
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.7431032412965184
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.8497106078763412
+INFO:root:EdgeBank: Run: 4, Elapsed time: 96.09895610809326
+INFO:root:****************************************
+===========================================================================
+================================================
+Method: EBank
+NEG_SAMPLE: rnd
+Data: wikipedia
+mem_mode: window_freq_weight
+w_mode: fixed
+Elapsed Time: 540 seconds
+================================================================================================
+
+================================================
+ARGS:
+Data: wikipedia
+Memory: window_freq_weight
+w_mode: avg_reoccur
+n_runs: 5
+================================================
+===========================================================================
+Info: Arguments:
+ Namespace(val_ratio=0.15, test_ratio=0.15, different_new_nodes=False, randomize_features=False, data='wikipedia', n_runs=5, mem_mode='window_freq_weight', w_mode='avg_reoccur', neg_sample='rnd')
+===========================================================================
+The dataset has 157474 interactions, involving 9227 different nodes
+The training dataset has 79202 interactions, involving 5904 different nodes
+The validation dataset has 23621 interactions, involving 3256 different nodes
+The test dataset has 23621 interactions, involving 3564 different nodes
+The new node validation dataset has 11742 interactions, involving 2134 different nodes
+The new node test dataset has 11765 interactions, involving 2482 different nodes
+922 nodes were used for the inductive testing, i.e. are never seen during training
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: avg_reoccur
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 0
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- ap: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.7319067627050819
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9990859673163398
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.464233693477391
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.6292840861480122
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.8864326372040711
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.512579427640968
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.7410664265706284
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9988066833442553
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.4827210884353742
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.6480668595090816
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.7740716286514606
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9983168675349957
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.5490676270508202
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.7048858655625015
+INFO:root:EdgeBank: Run: 0, Elapsed time: 125.97375202178955
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: avg_reoccur
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 1
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- ap: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.7319067627050819
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9990859673163398
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.464233693477391
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.6292840861480122
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.8864326372040711
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.512579427640968
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.7410664265706284
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9988066833442553
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.4827210884353742
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.6480668595090816
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.7740716286514606
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9983168675349957
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.5490676270508202
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.7048858655625015
+INFO:root:EdgeBank: Run: 1, Elapsed time: 124.29344701766968
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: avg_reoccur
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 2
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- ap: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.7319067627050819
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9990859673163398
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.464233693477391
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.6292840861480122
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.8864326372040711
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.512579427640968
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.7410664265706284
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9988066833442553
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.4827210884353742
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.6480668595090816
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.7740716286514606
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9983168675349957
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.5490676270508202
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.7048858655625015
+INFO:root:EdgeBank: Run: 2, Elapsed time: 124.87237691879272
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: avg_reoccur
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 3
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- ap: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.7319067627050819
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9990859673163398
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.464233693477391
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.6292840861480122
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.8864326372040711
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.512579427640968
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.7410664265706284
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9988066833442553
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.4827210884353742
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.6480668595090816
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.7740716286514606
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9983168675349957
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.5490676270508202
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.7048858655625015
+INFO:root:EdgeBank: Run: 3, Elapsed time: 124.79712104797363
+INFO:root:****************************************
+INFO:root:****************************************
+INFO:root:network_name: wikipedia
+INFO:root:n_runs: 5
+INFO:root:val_ratio: 0.15
+INFO:root:test_ratio: 0.15
+INFO:root:m_mode: window_freq_weight
+INFO:root:w_mode: avg_reoccur
+INFO:root:learn_through_time: True
+INFO:root:batch_size: 200
+INFO:root:neg_sample: rnd
+INFO:root:Run: 4
+INFO:root:Test statistics: Old nodes -- auc_inherent: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- ap_inherent: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- ap: 0.7740250419832747
+INFO:root:Test statistics: Old nodes -- au_roc_score: 0.7741826580632252
+INFO:root:Test statistics: Old nodes -- opt_thr_au_roc: 0.6931471805599454
+INFO:root:Test statistics: Old nodes -- acc_auroc_opt_thr: 0.7319067627050819
+INFO:root:Test statistics: Old nodes -- prec_auroc_opt_thr: 0.9990859673163398
+INFO:root:Test statistics: Old nodes -- rec_auroc_opt_thr: 0.464233693477391
+INFO:root:Test statistics: Old nodes -- f1_auroc_opt_thr: 0.6292840861480122
+INFO:root:Test statistics: Old nodes -- au_pr_score: 0.8864326372040711
+INFO:root:Test statistics: Old nodes -- opt_thr_au_pr: 0.512579427640968
+INFO:root:Test statistics: Old nodes -- acc_aupr_opt_thr: 0.7410664265706284
+INFO:root:Test statistics: Old nodes -- prec_aupr_opt_thr: 0.9988066833442553
+INFO:root:Test statistics: Old nodes -- rec_aupr_opt_thr: 0.4827210884353742
+INFO:root:Test statistics: Old nodes -- f1_aupr_opt_thr: 0.6480668595090816
+INFO:root:Test statistics: Old nodes -- acc_thr_0.5: 0.7740716286514606
+INFO:root:Test statistics: Old nodes -- prec_thr_0.5: 0.9983168675349957
+INFO:root:Test statistics: Old nodes -- rec_thr_0.5: 0.5490676270508202
+INFO:root:Test statistics: Old nodes -- f1_thr_0.5: 0.7048858655625015
+INFO:root:EdgeBank: Run: 4, Elapsed time: 124.66115832328796
+INFO:root:****************************************
+===========================================================================
+================================================
+Method: EBank
+NEG_SAMPLE: rnd
+Data: wikipedia
+mem_mode: window_freq_weight
+w_mode: avg_reoccur
+Elapsed Time: 677 seconds
+================================================================================================
+

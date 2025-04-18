@@ -51,7 +51,8 @@ def get_data(common_path, dataset_name, val_ratio, test_ratio, different_new_nod
     # Sample nodes which we keep as new nodes (to test inductiveness), so then we have to remove all
     # their edges from training
     new_test_node_set = set(
-        random.sample(test_node_set, int(nn_test_ratio * n_total_unique_nodes)))  # the same 10% of CAW-N?!
+        random.sample(sorted(list(test_node_set)), int(nn_test_ratio * n_total_unique_nodes))
+)  # the same 10% of CAW-N?!
 
     # Mask saying for each source and destination whether they are new test nodes
     new_test_source_mask = graph_df.u.map(lambda x: x in new_test_node_set).values

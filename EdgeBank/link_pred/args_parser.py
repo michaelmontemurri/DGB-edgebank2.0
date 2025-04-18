@@ -18,7 +18,7 @@ def parse_args_edge_bank():
     parser.add_argument('-d', '--data', type=str, default='wiki', help='name of the network dataset.')
     parser.add_argument('--n_runs', type=int, default=10, help='number of runs.')
     parser.add_argument('--mem_mode', type=str, default='unlim_mem', help='How memory of EdgeBank works.',
-                        choices=['unlim_mem', 'repeat_freq', 'time_window'])
+                        choices=['unlim_mem', 'repeat_freq', 'time_window', 'freq_weight', 'window_freq_weight'])
     parser.add_argument('--w_mode', type=str, default='fixed',
                         help='In time interval-based memory, how to select time window size.',
                         choices=['fixed', 'avg_reoccur'])
