@@ -27,6 +27,10 @@ I introduce two **frequency-based** variants of EdgeBank that take into account 
 - **`freq_weight`**: Assigns higher confidence to links that appeared more frequently over the entire history.
 - **`window_freq_weight`**: Applies frequency weighting *within a moving time window*.
 
+> _Note: Some datasets from the original benchmark were excluded due to issues encountered during download or preprocessing._
+
+These early results are limited to the standard evaluation setting. Future work should extend this analysis to the **historical** and **inductive** settings discussed in the original paper. That said, these frequency-based baselines already demonstrate **consistently strong performance**.
+
 ---
 
 ## 📊 Results
@@ -37,7 +41,7 @@ I evaluate the original and proposed EdgeBank variants on 12 diverse dynamic gra
   <img src="EdgeBank/images/edgebank_aucroc_custom_grouped.png" width="80%">
 </div>
 
-As shown above, my proposed `freq_weight*` method outperforms the original `unlim_mem` (EdgeBank_inf)` on every single dataset tested (by a large margin on some datasets). Similarly, `window_freq_weight*` consistently improves upon the `time_window` (EdgeBank_tw) baseline.
+As shown above, my proposed `freq_weight*` method outperforms the original `unlim_mem` (`EdgeBank_inf`) on **every single dataset tested**, in some cases by a wide margin. Similarly, `window_freq_weight*` consistently improves upon the `time_window` (`EdgeBank_tw`) baseline.
 
 To summarize overall performance across all datasets, I also compute the average AUC-ROC (± std deviation) per memory strategy:
 
