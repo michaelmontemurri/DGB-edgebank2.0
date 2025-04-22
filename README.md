@@ -46,7 +46,7 @@ As shown above, my proposed `freq_weight*` method outperforms the original `unli
 To summarize overall performance across all datasets, I also compute the average AUC-ROC (± std deviation) per memory strategy:
 
 <div align="center">
-  <img src="EdgeBank/images/edgebank_aucroc_by_strategy.png" width="60%">
+  <img src="EdgeBank/images/edgebank_aucroc_memory_averages.png" width="60%">
 </div>
 
 > **Note**: Asterisk (*) denotes my new frequency-based additions.
