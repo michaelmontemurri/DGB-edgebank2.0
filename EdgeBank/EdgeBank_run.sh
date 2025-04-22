@@ -20,7 +20,7 @@ neg_sample=rnd
 
 for data in CanParl Contacts Flights lastfm Flights mooc SocialEvo uci UNtrade UNvote USLegis wikipedia enron
 do
-  for mem_mode in  unlim_mem  #window_freq_weight freq_weight repeat_freq time_window 
+  for mem_mode in  unlim_mem  window_freq_weight freq_weight repeat_freq time_window 
   do
     if [ "${mem_mode}" = "time_window" ] || [ "${mem_mode}" = "window_freq_weight" ]
     then

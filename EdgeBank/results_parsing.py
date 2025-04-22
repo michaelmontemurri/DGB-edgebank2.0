@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 
-log_paths = ['edgebank_results.log', 'edgebank_freq_window_results.log']
+log_paths = ['logs/edgebank_20250421_115632.log']
 
 results = []
 
@@ -36,12 +36,14 @@ for log_path in log_paths:
         if metric_match:
             metric, value = metric_match.groups()
             results.append({
+                'dataset': current_config.get('dataset'),
                 'mem_mode': current_config.get('mem_mode'),
                 'w_mode': current_config.get('w_mode', ''),
                 'run': current_config.get('run'),
                 'metric': metric,
                 'value': float(value)
             })
+
 
 
 df = pd.DataFrame(results)

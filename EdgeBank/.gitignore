@@ -1,6 +1,6 @@
 processed/*
 !processed/.gitkeep
-log/*
+logs/*
 !log/.gitkeep
 saved_checkpoints/*
 !saved_checkpoints/.gitkeep
@@ -13,3 +13,4 @@ notebooks/.ipynb_checkpoints/*
 .ipynb_checkpoints
 
 data/
+*.slurm
