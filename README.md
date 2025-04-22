@@ -20,7 +20,7 @@ This project extends the original **EdgeBank** baseline from the NeurIPS Dataset
 
 These approaches offer strong baselines for evaluating dynamic graph models, relying solely on link recurrence patterns.
 
-### 🔧 Our Contributions
+### 🔧 My Contributions
 
 I introduce two **frequency-based** variants of EdgeBank that take into account *how often* a link has appeared rather than just whether it appeared:
 
