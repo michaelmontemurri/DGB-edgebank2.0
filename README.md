@@ -1,6 +1,6 @@
 # EdgeBank2.0
 
-Extending the work from _"Towards Better Evaluation for Dynamic Link Prediction"_
+Extending the work from _"Towards Better Evaluation for Dynamic Link Prediction"_ by Farimah Poursafaei, Andy Huang, Kellin Pelrine, Reihaneh Rabbany
 
 [![NeurIPS](https://img.shields.io/badge/NeurIPS-OpenReview-red)](https://openreview.net/forum?id=1GVpwr2Tfdg)
 [![arXiv](https://img.shields.io/badge/arXiv-2205.12454-b31b1b.svg)](https://arxiv.org/pdf/2207.10128.pdf)
