@@ -20,9 +20,9 @@ This project extends the original **EdgeBank** baseline from the NeurIPS Dataset
 
 These approaches offer strong baselines for evaluating dynamic graph models, relying solely on link recurrence patterns.
 
-### 🔧 My Contributions
+### 🔧 Contributions
 
-I introduce two **frequency-based** variants of EdgeBank that take into account *how often* a link has appeared rather than just whether it appeared:
+We introduce two **frequency-based** variants of EdgeBank that take into account *how often* a link has appeared rather than just whether it appeared:
 
 - **`freq_weight`**: Assigns higher confidence to links that appeared more frequently over the entire history.
 - **`window_freq_weight`**: Applies frequency weighting *within a moving time window*.
@@ -35,7 +35,7 @@ These early results are limited to the standard evaluation setting. Future work 
 
 ## 📊 Results
 
-I evaluate the original and proposed EdgeBank variants on 12 diverse dynamic graph datasets. The figure below shows the **mean AUC-ROC** scores per dataset for each method:
+We evaluate the original and proposed EdgeBank variants on 12 diverse dynamic graph datasets. The figure below shows the **mean AUC-ROC** scores per dataset for each method:
 
 <div align="center">
   <img src="EdgeBank/images/edgebank_aucroc_custom_grouped.png" width="80%">
@@ -43,7 +43,7 @@ I evaluate the original and proposed EdgeBank variants on 12 diverse dynamic gra
 
 As shown above, my proposed `freq_weight*` method outperforms the original `unlim_mem` (`EdgeBank_inf`) on **every single dataset tested**, in some cases by a wide margin. Similarly, `window_freq_weight*` consistently improves upon the `time_window` (`EdgeBank_tw`) baseline.
 
-To summarize overall performance across all datasets, I also compute the average AUC-ROC (± std deviation) per memory strategy:
+To summarize overall performance across all datasets, We also compute the average AUC-ROC (± std deviation) per memory strategy:
 
 <div align="center">
   <img src="EdgeBank/images/edgebank_aucroc_memory_averages.png" width="60%">
